@@ -4,11 +4,13 @@ const path          = require('path');
 const cookieParser  = require('cookie-parser');
 const logger        = require('morgan');
 const models        = require('./models/index.js');
+const sequelize     = require('./models').sequelize;
 
 const indexRouter   = require('./routes/index');
 const usersRouter   = require('./routes/users');
 
 const app = express();
+sequelize.sync();
 
 models.sequelize.sync().then( ()=> {
   console.log('db연결성공');
