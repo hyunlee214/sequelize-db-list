@@ -1,9 +1,7 @@
 'use strict';
 
-const { Model, DataTypes } = require('sequelize');
-
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('testmem', {
+  const testmem = sequelize.define('testmem', {
     memberId: {
       type: DataTypes.INTEGER(),
       allowNull: false
@@ -20,4 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     timestamp: false
   });
+
+  return testmem;
 };
