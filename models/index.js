@@ -28,6 +28,11 @@ fs
     db[model.name] = model
   })
 
+//models 매핑
+db.Member = require('./member')(sequelize, Sequelize);
+db.Product = require('./product')(sequelize, Sequelize);
+db.Testmem = require('./testmem')(sequelize, Sequelize);
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
