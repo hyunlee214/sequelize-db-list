@@ -1,12 +1,10 @@
 'use strict';
 
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('product', {
-    productname: {
+    productName: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
