@@ -1,12 +1,12 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+const fs          = require('fs');
+const path        = require('path');
+const Sequelize   = require('sequelize');
+const basename    = path.basename(__filename);
+const env         = process.env.NODE_ENV || 'development';
+const config      = require(__dirname + '/../config/config.json')[env];
+const db          = {};
 
 let sequelize;
 if (config.use_env_variable) {
@@ -29,9 +29,9 @@ fs
   })
 
 //models 매핑
-db.Member = require('./member')(sequelize, Sequelize);
-db.Product = require('./product')(sequelize, Sequelize);
-db.Testmem = require('./testmem')(sequelize, Sequelize);
+db.Member     = require('./member')(sequelize, Sequelize);
+db.Product    = require('./product')(sequelize, Sequelize);
+db.Testmem    = require('./testmem')(sequelize, Sequelize);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
