@@ -15,6 +15,9 @@ const usersRouter   = require('./routes/users');
 const app = express();
 sequelize.sync();
 
+// 정적 파일 제공
+app.use(express.static('public'));
+
 models.sequelize.sync().then( ()=> {
   console.log('db연결성공');
 }). catch(err => {
