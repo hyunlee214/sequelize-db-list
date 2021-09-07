@@ -1,5 +1,7 @@
 'use strict';
 
+const Sequelize = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const member = sequelize.define('member', {
     userName: {
