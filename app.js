@@ -10,7 +10,8 @@ const sequelize     = require('./models').sequelize;
 const nunjucks      = require("nunjucks");
 
 const indexRouter   = require('./routes/index');
-const usersRouter   = require('./routes/users');
+// const usersRouter   = require('./routes/users');
+const memberRouter  = require('./routes/index');
 
 const app = express();
 sequelize.sync();
