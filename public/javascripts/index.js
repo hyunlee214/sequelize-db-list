@@ -7,9 +7,9 @@ window.onload = () => {
     const username = document.getElementById('input-username').value;
     const password = document.getElementById('input-password').value;
     const obj = {
-      username: username,
+      userName: userName,
       password: password
     };
     await axios.post('/member', obj);
-    })
+    });
 };

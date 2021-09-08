@@ -9,12 +9,14 @@ const env         = process.env.NODE_ENV || 'development';
 const config      = require(__dirname + '/../config/config.json')[env];
 const db          = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const sequelize = new Sequelize( config.database, config.userName, config.password, config);
+
+// let sequelize;
+// if (config.use_env_variable) {
+//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//   sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 // fs
 //   .readdirSync(__dirname)
@@ -29,10 +31,12 @@ if (config.use_env_variable) {
 //     db[model.name] = model
 //   })
 
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
 //models 매핑
 Member.init(sequelize);
 db.Member     = Member;
-// db.Member     = require('./member')(sequelize, Sequelize);
 db.Product    = require('./product')(sequelize, Sequelize);
 db.Testmem    = require('./testmem')(sequelize, Sequelize);
 
@@ -41,8 +45,5 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;
