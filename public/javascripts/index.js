@@ -1,12 +1,12 @@
 window.onload = () => {
   console.log('test onload');
   
-  const memberForm = document.getElementById('member-form');
+  let memberForm = document.getElementById('member-form');
   memberForm.addEventListener('submit', async (evt) => {
 
-    const username = document.getElementById('input-username').value;
-    const password = document.getElementById('input-password').value;
-    const obj = {
+    let userName = document.getElementById('input-username').value;
+    let password = document.getElementById('input-password').value;
+    let obj = {
       userName: userName,
       password: password
     };

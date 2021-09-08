@@ -6,11 +6,11 @@ const Member = require('../models/member');
 
 router.post('/', async (req, res, next) => {
   console.log(req.body);
-  console.log(req.body.username);
+  console.log(req.body.userName);
   console.log(req.body.password);
 
   const result = await Member.create({
-    username: req.body.username,
+    userName: req.body.userName,
     password: req.body.password
   });
 
