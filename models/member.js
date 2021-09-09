@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 module.exports = class Member extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
-      userName: {
+      username: {
         type: Sequelize.STRING(45),
         allowNull: false
       },

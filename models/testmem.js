@@ -2,11 +2,11 @@
 
 module.exports = (sequelize, DataTypes) => {
   const testmem = sequelize.define('testmem', {
-    memberId: {
+    memberid: {
       type: DataTypes.INTEGER(),
       allowNull: false
     },
-    productId: {
+    productid: {
       type: DataTypes.INTEGER(),
       allowNull: false,
     },
