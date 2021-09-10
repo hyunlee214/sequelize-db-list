@@ -17,5 +17,9 @@ window.onload = () => {
   });
 };
     
-  return await axios.post('/member', obj);
+async function signup(uri, data) {
+  let result = await axois.post(uri, data);
+  console.log(result);
+  return result;
+}
     
