@@ -15,33 +15,20 @@ router.post('/', async (req, res, next) => {
       password: req.body.password
     });
     console.log(result);
-
+  
     if (result) {
       console.log('success');
       res.json({
         status : 200
       });
-
-  // const result = await Member.create({
-  //   username: req.body.username,
-  //   password: req.body.password
-  // });
-
-  // console.log(result);
-  try { 
-    const result = await Member.create({
-      username: req.body.username,
-      password: req.body.password
-    });
-    console.log(result);
-
-    if (result) {
-      console.log('success');
-      res.json({
-        status : 200
-      }); 
-    }
+    };
   }
+  finally {
+    
+  }
+});
+
+      
 
 
 module.exports = router;
