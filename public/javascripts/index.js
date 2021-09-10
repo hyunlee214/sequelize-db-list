@@ -3,13 +3,19 @@ window.onload = () => {
   
   let memberForm = document.getElementById('member-form');
   memberForm.addEventListener('submit', async (evt) => {
-
+    evt.preventDefault();
     let username = document.getElementById('input-username').value;
     let password = document.getElementById('input-password').value;
     let obj = {
       username: username,
       password: password
     };
-    await axios.post('/member', obj);
+
+    signup('/member', obj).then((res) => {
+      alert(res.status);
     });
+  });
 };
+    
+  return await axios.post('/member', obj);
+    
