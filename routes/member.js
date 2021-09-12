@@ -9,26 +9,13 @@ router.post('/', async (req, res, next) => {
   console.log(req.body.username);
   console.log(req.body.password);
 
-    try { 
-    const result = await Member.create({
-      username: req.body.username,
-      password: req.body.password
-    });
-    console.log(result);
-  
-    if (result) {
-      console.log('success');
-      res.json({
-        status : 200
-      });
-    };
-  }
-  finally {
-    
-  }
+  const result = await Member.create({
+    username: req.body.username,
+    password: req.body.password
+  });
+
+  console.log(result);
 });
 
       
-
-
 module.exports = router;

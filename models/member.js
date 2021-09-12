@@ -23,7 +23,7 @@ module.exports = class Member extends Sequelize.Model {
       timestamps: false
     });
   }
-}
+};
 
 
 
