@@ -1,0 +1,2 @@
+app.engine('nunj', nunjucks.render);
+app.set('view engine', 'nunj');
